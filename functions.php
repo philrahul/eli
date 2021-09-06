@@ -265,7 +265,22 @@ function custom_post_type() {
 	add_action( 'init', 'custom_post_type', 0 );
 
 
- 
-
+	//Add site logo
+	add_theme_support( 'custom-logo', array(
+		'height'               => 100,
+		'width'                => 400,
+		'flex-height'          => true,
+		'flex-width'           => true,
+		'header-text'          => array( 'site-title', 'site-description' ),
+		'unlink-homepage-logo' => true,
+	) );
+	 
+ function add_stylesheets()
+ {
+	wp_enqueue_style('bootstrap-css','https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css');
+	wp_enqueue_script( 'bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js', array(), '1.0.0', true );
+	wp_enqueue_style( 'roboto', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap', false );
+ }
+ add_action('wp_enqueue_scripts','add_stylesheets');
 
 ?>

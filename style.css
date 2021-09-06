@@ -601,7 +601,11 @@ a:hover{
 .wh-section__banner .wh-section__banner--content{
   padding: 133px 0 251px;
   max-width: 542px;
+<<<<<<< HEAD
   color: #fff;
+=======
+  color:#fff;
+>>>>>>> 1939cd6aee69ac4e05a7c5f4894c0c4fa5486eb7
 }
 
 .wh-section__banner .wh-section__banner--content h1{
