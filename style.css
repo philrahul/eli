@@ -596,19 +596,22 @@ a:hover{
 /* SECTION_IMAGE-ASIDE-TEXT-BACKGROUND */
 
 .wh-section_image-aside-text-background{
-  --padding-top: 56px;
+  --padding-top: 55px;
   --background-image-height: 295px;
-  min-height: calc( var(--padding-top) + var(--background-image-height) );
+  --padding-bottom: 59.5px;
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+  min-height: calc( var(--padding-top) + var(--background-image-height) + var(--padding-bottom) );
   background-color: var(--color-background-green);
 }
 
 .wh-section_image-aside-text-background .backgound-image{
-  --top: 56px;
+  --top: 55px;
   top: var(--top);
 }
 
 .wh-section_image-aside-text-background .content{
-  padding-top: 16px;
+  padding-top: 24.8px;
   max-width: 685px;
   color: #fff;
 }

@@ -33,7 +33,7 @@ $link = get_field('link');
 ?>
 <!-- banner section -->
 <section class="two-columns-section <?php echo esc_attr(implode(' ',$className)); ?>" id="<?php echo esc_attr($id); ?>">
-        
+    
 </section>
 <script>
    
