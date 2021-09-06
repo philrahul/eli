@@ -33,8 +33,22 @@ $image = get_field('image');
 ?>
 <!-- banner section -->
 <section class="image-aside-text-background-section <?php echo esc_attr(implode(' ',$className)); ?> wh-section wh-section_image-aside-text-background" id="<?php echo esc_attr($id); ?>">
-    <div class="background-image backgroung-image-right background-image-small">
+    <div class="backgound-image background-image-right backgound-image-small">
       <img src="./wp-content/themes/eli/assets/img_chemical_bond.svg" alt="">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="content">
+            <h2>
+              What We Do
+            </h2>
+            <p class="fs-normal">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tellus ipsum, interdum a fermentum id, aliquet eu ligula. Nulla fermentum ex ut facilisis egestas. Donec interdum sollicitudin rhoncus. Etiam quam nisi, sodales ut nisi ac, fringilla pellentesque nibh.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 </section>
 <script>
