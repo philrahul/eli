@@ -127,6 +127,17 @@ function register_acf_block_types() {
         'keywords'          => array( 'image','text','slider','background'),
         'post_types'        => array('page'),
         ));
+
+        acf_register_block_type(array(
+          'name'              => 'two-columns-stats',
+          'title'             => __('Two Columns Stats'),
+          'description'       => __('A Block for displaying two columns with stats.'),
+          'render_template'   => '_template-parts/blocks/two-columns-stats.php',
+          'category'          => 'formatting',
+          'icon'              => $flag ,
+          'keywords'          => array( 'image','text','stats','columns'),
+          'post_types'        => array('page'),
+          ));
         
         
 
@@ -139,7 +150,7 @@ global $post;
 $add_editor_style = false;
 if (is_admin() && isset($_GET['post']) ) {
   global $common_blocks;
-  $common_blocks = array('acf/cta-banner','acf/image-aside-text-with-background','acf/image-aside-text','acf/two-columns-cta','acf/blog-list-cta','acf/two-columns-cta-repeater','acf/image-aside-text-slider','acf/image-aside-text-slider-with-background');
+  $common_blocks = array('acf/cta-banner','acf/image-aside-text-with-background','acf/image-aside-text','acf/two-columns-cta','acf/blog-list-cta','acf/two-columns-cta-repeater','acf/image-aside-text-slider','acf/image-aside-text-slider-with-background','acf/two-columns-stats');
   $pagetemplate = get_post_meta($_GET['post'], '_wp_page_template', true);
   if ( !empty( $pagetemplate ) ) {
     if ( $pagetemplate == 'page-custom-blocks.php') {
