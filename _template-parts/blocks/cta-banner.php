@@ -55,6 +55,7 @@ $background_image = get_field('background_image');
           $link_url = $link['url'];
           echo '<a href="'.$link_url.'" class="link-more link-more-white fs-small">
             '.$link_title.'
+            <img src="./wp-content/themes/eli/assets/img_arrow_white.svg" alt="">
           </a>';
            endif;?>
         </div>
