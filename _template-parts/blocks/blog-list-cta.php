@@ -30,33 +30,38 @@ if(!$block['data']['hh_heading_tag']){
 $title = get_field('title');
 $description = get_field('description');
 $link = get_field('link');
+$blogs = get_field('blogs');
 ?>
 <!-- banner section -->
 <section class="blog-list <?php echo esc_attr(implode(' ',$className)); ?>" id="<?php echo esc_attr($id); ?>">
-<?php /*
+<?php 
+if( $blogs ): ?>
+    <div class="container">
+      <div class="row">
+        <?php foreach( $blogs as $post ): 
 
-
-if( get_field('show_recent_blogs_list') ) {
-    // Show recent blogs
-}
-
-$featured_posts = get_field('blogs');
-if( $featured_posts ): ?>
-    <ul>
-    <?php foreach( $featured_posts as $post ): 
-
-        // Setup this post for WP functions (variable must be named $post).
-        setup_postdata($post); ?>
-        <li>
-            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-            <span>A custom field from this post: <?php the_field( 'field_name' ); ?></span>
-        </li>
-    <?php endforeach; ?>
-    </ul>
-    <?php 
-    // Reset the global post object so that the rest of the page works correctly.
-    wp_reset_postdata(); ?>
-<?php endif; */?> 
+            // Setup this post for WP functions (variable must be named $post).
+            setup_postdata($post); ?>
+            <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+              <?php echo get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'class' => 'card-img-top' ) );
+                    echo '<p class="blog-date">'.get_the_date().'</p>';
+                ?>
+                <h3><?php the_title(); ?></h3>
+                <a href="<?php the_permalink(); ?>">Read More <img src="./wp-content/themes/eli/assets/infg_arrow_right.svg" alt=""></a>
+              </div>
+            </div>
+                </div>
+        <?php endforeach; ?>
+        </ul>
+        <?php 
+        // Reset the global post object so that the rest of the page works correctly.
+        wp_reset_postdata(); ?>
+      </div>
+    </div>
+<?php endif; ?>
+?> 
 </section>
 <script>
    

@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <main id="content" class="category-page">
-		<header>
+		<!--<header>
 			<h1 class="entry-title"><?php single_post_title();; ?></h1>
-		</header>
+		</header>-->
 		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 		<article id="post-<?php the_ID(); ?>">
 			<header>

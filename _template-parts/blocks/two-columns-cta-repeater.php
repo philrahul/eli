@@ -31,16 +31,61 @@ if(!$block['data']['hh_heading_tag']){
 <!-- banner section -->
 <section class="two-columns-cta-repeater-section <?php echo esc_attr(implode(' ',$className)); ?>" id="<?php echo esc_attr($id); ?>">
 <?php
-// if( have_rows('cta') ):
-//     while( have_rows('cta') ) : the_row();
-//         $title = get_sub_field('title');
-//         $description = get_sub_field('description');
-//         $image = get_sub_field('image');
-//         $link = get_sub_field('link');
-
-
-//     endwhile;
-//   endif;
+if( have_rows('cta') ):?>
+<div class="container">
+  <div class="row">
+    <?php
+    $j = 0;
+    while( have_rows('cta') ) : the_row();
+      $title = get_sub_field('title');
+      $description = get_sub_field('description');
+      $image = get_sub_field('image');
+      $link = get_sub_field('link'); 
+      if($j%2==0):
+      ?>
+      <div class="col-md-6">
+        <?php if($title):?>
+          <h2><?php echo $title;?></h2>
+        <?php endif;?>
+        <?php if($description):
+          echo '<div class="fs-small">'.$description.'</div>';
+        endif;
+        if($link):?>
+          <a href="<?php echo $link['url'];?>" class="link-more fs-small">
+          <?php echo $link['title'];?> <img src="./wp-content/themes/eli/assets/infg_arrow_right.svg" alt="">
+          </a>
+          <?php endif;?>
+      </div>
+      <div class="col-md-6">
+        <?php if($image):?>
+            <img src = "<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
+        <?php endif;?>
+      </div>
+      <?php else:?>
+      <div class="col-md-6">
+        <?php if($image):?>
+            <img src = "<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
+        <?php endif;?>
+      </div>
+      <div class="col-md-6">
+        <?php if($title):?>
+          <h2><?php echo $title;?></h2>
+        <?php endif;?>
+        <?php if($description):
+          echo '<div class="fs-small">'.$description.'</div>';
+        endif;
+        if($link):?>
+          <a href="<?php echo $link['url'];?>" class="link-more fs-small">
+          <?php echo $link['title'];?> <img src="./wp-content/themes/eli/assets/infg_arrow_right.svg" alt="">
+          </a>
+          <?php endif;?>
+      </div>
+    <?php endif;
+    $j++;
+    endwhile;?>
+   </div>
+</div>
+  <?php endif;
 ?>       
 </section>
 <script>

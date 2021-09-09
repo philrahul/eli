@@ -14,7 +14,8 @@
   </head>
   <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-    <header class="bg-white main-header py-0 fixed-top">
+    <a class="screen-reader-text" href="#content"><?php _e( 'Skip to Main Content', 'whmbp-theme' ); ?></a>
+    <header class="bg-white main-header py-0">
       <nav class="navbar navbar-expand-lg navbar-dark d-block p-0">
         <div class="container-fluid py-4">
           <div class="row">

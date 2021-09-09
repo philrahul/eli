@@ -26,11 +26,11 @@ if( function_exists('acf_add_options_page') && current_user_can( 'manage_options
 		'menu_title' 	=> 'Options',
 		'redirect' 		=> false
 	));
-  /*
+  
   $child = acf_add_options_sub_page(array(
-      'page_title'  => __('Footer'),
-      'menu_title'  => __('Footer'),
+      'page_title'  => __('Learn'),
+      'menu_title'  => __('Learn'),
       'parent_slug' => $parent['menu_slug'],
   ));
-  */
+  
 }

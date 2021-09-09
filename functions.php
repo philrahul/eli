@@ -211,7 +211,7 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu {
 }
 
 /*
-* Creating a function to create our CPT
+* Registering Products Custom Post Type
 */
  
 function custom_post_type() {
@@ -255,14 +255,127 @@ function custom_post_type() {
 			'capability_type'     => 'post',
 			'show_in_rest' => true,
 			'menu_icon' => 'dashicons-superhero'
-	 
 		);
-		 
+ 
 		// Registering your Custom Post Type
 		register_post_type( 'products', $args );	 
 	}
 	 
 	add_action( 'init', 'custom_post_type', 0 );
+
+/*Registering Product Categories*/
+add_action( 'init', 'create_products_custom_taxonomy', 0 );
+ 
+//create a custom taxonomy name it "type" for your posts
+function create_products_custom_taxonomy() {
+ 
+  $labels = array(
+    'name' => _x( 'Categories', 'taxonomy general name' ),
+    'singular_name' => _x( 'Category', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Categories' ),
+    'all_items' => __( 'All Categories' ),
+    'parent_item' => __( 'Category Type' ),
+    'parent_item_colon' => __( 'Category Type:' ),
+    'edit_item' => __( 'Edit Category' ), 
+    'update_item' => __( 'Update Category' ),
+    'add_new_item' => __( 'Add New Category' ),
+    'new_item_name' => __( 'New Category' ),
+    'menu_name' => __( 'Categories' ),
+  ); 	
+ 
+  register_taxonomy('product-categories',array('products'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'categories' ),
+  ));
+}
+
+/*
+* Registering Learn Custom Post Type
+*/
+ 
+function learn_post_type() {
+ 
+	// Set UI labels for Custom Post Type
+		$labels = array(
+			'name'                => _x( 'Learn', 'Post Type General Name', 'whmbp-theme' ),
+			'singular_name'       => _x( 'Learn', 'Post Type Singular Name', 'whmbp-theme' ),
+			'menu_name'           => __( 'Learn', 'whmbp-theme' ),
+			'parent_item_colon'   => __( 'Parent Learn', 'whmbp-theme' ),
+			'all_items'           => __( 'All Learn', 'whmbp-theme' ),
+			'view_item'           => __( 'View Learn', 'whmbp-theme' ),
+			'add_new_item'        => __( 'Add New Learn', 'whmbp-theme' ),
+			'add_new'             => __( 'Add New', 'whmbp-theme' ),
+			'edit_item'           => __( 'Edit Learn', 'whmbp-theme' ),
+			'update_item'         => __( 'Update Learn', 'whmbp-theme' ),
+			'search_items'        => __( 'Search Learn', 'whmbp-theme' ),
+			'not_found'           => __( 'Not Found', 'whmbp-theme' ),
+			'not_found_in_trash'  => __( 'Not found in Trash', 'whmbp-theme' ),
+		);
+		 
+	// Set other options for Custom Post Type
+		 
+		$args = array(
+			'label'               => __( 'learn', 'whmbp-theme' ),
+			'description'         => __( 'Learn', 'whmbp-theme' ),
+			'labels'              => $labels,
+			'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+			'taxonomies'          => array( 'categories' ),
+			'hierarchical'        => false,
+			'public'              => true,
+			'show_ui'             => true,
+			'show_in_menu'        => true,
+			'show_in_nav_menus'   => true,
+			'show_in_admin_bar'   => true,
+			'menu_position'       => 5,
+			'can_export'          => true,
+			'has_archive'         => true,
+			'exclude_from_search' => false,
+			'publicly_queryable'  => true,
+			'capability_type'     => 'post',
+			'show_in_rest' => true,
+			'menu_icon' => 'dashicons-welcome-learn-more'
+		);
+ 
+		// Registering your Custom Post Type
+		register_post_type( 'learn', $args );	 
+	}
+	 
+	add_action( 'init', 'learn_post_type', 0 );
+
+/*Registering Product Categories*/
+add_action( 'init', 'create_products_custom_taxonomy_learn', 0 );
+ 
+//create a custom taxonomy name it "type" for your posts
+function create_products_custom_taxonomy_learn() {
+ 
+  $labels = array(
+    'name' => _x( 'Categories', 'taxonomy general name' ),
+    'singular_name' => _x( 'Category', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Categories' ),
+    'all_items' => __( 'All Categories' ),
+    'parent_item' => __( 'Category Type' ),
+    'parent_item_colon' => __( 'Category Type:' ),
+    'edit_item' => __( 'Edit Category' ), 
+    'update_item' => __( 'Update Category' ),
+    'add_new_item' => __( 'Add New Category' ),
+    'new_item_name' => __( 'New Category' ),
+    'menu_name' => __( 'Categories' ),
+  ); 	
+ 
+  register_taxonomy('learn-categories',array('learn'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'categories' ),
+	'show_in_rest' => true
+  ));
+}
 
 
 	//Add site logo
