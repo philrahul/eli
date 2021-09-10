@@ -28,6 +28,7 @@ function whmbp_nq_scripts() {
   global $whmbp_version;
   wp_enqueue_style( 'style', get_stylesheet_uri(),null,$whmbp_version);
   wp_enqueue_script ('whmpb-script', get_stylesheet_directory_uri() . '/_js/js.js', array('jquery'), $whmbp_version, true);
+
 }
 add_action('wp_enqueue_scripts', 'whmbp_nq_scripts');
 
