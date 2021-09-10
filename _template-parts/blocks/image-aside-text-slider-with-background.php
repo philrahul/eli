@@ -68,6 +68,63 @@ $title = get_field('title');
                 </div>
               </div>
             </div>
+            <div class="hs-item slider-item w-100">
+              <div class="row flex-column flex-md-row">
+                <div class="content left col-12 col-md-5 d-flex flex-column justify-content-center ">
+                  <h2>
+                    Farmer-focused
+                  </h2>
+                  <div class="fs-small">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tellus ipsum, interdum a fermentum id, aliquet eu ligula. Nulla fermentum ex ut facilisis egestas. Donec interdum sollicitudin rhoncus. Etiam quam nisi, sodales ut nisi ac, fringilla pellentesque nibh. Donec interdum sollicitudin rhoncus. Etiam quam nisi, sodales ut nisi ac, fringilla pellentesque nibh.
+                  </div>
+                  <a href="#" class="link-more fs-small">
+                    Learn More
+                    <img src="./wp-content/themes/eli/assets/img_arrow_right.svg" alt="">
+                  </a>
+                </div>
+                <div class="content right col-12 col-md-7 ml-auto">
+                  <img src="./wp-content/themes/eli/assets/img_farmer_focused.jpg" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="hs-item slider-item w-100">
+              <div class="row flex-column flex-md-row">
+                <div class="content left col-12 col-md-5 d-flex flex-column justify-content-center ">
+                  <h2>
+                    Farmer-focused
+                  </h2>
+                  <div class="fs-small">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tellus ipsum, interdum a fermentum id, aliquet eu ligula. Nulla fermentum ex ut facilisis egestas. Donec interdum sollicitudin rhoncus. Etiam quam nisi, sodales ut nisi ac, fringilla pellentesque nibh. Donec interdum sollicitudin rhoncus. Etiam quam nisi, sodales ut nisi ac, fringilla pellentesque nibh.
+                  </div>
+                  <a href="#" class="link-more fs-small">
+                    Learn More
+                    <img src="./wp-content/themes/eli/assets/img_arrow_right.svg" alt="">
+                  </a>
+                </div>
+                <div class="content right col-12 col-md-7 ml-auto">
+                  <img src="./wp-content/themes/eli/assets/img_farmer_focused.jpg" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="hs-item slider-item w-100">
+              <div class="row flex-column flex-md-row">
+                <div class="content left col-12 col-md-5 d-flex flex-column justify-content-center ">
+                  <h2>
+                    Farmer-focused
+                  </h2>
+                  <div class="fs-small">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tellus ipsum, interdum a fermentum id, aliquet eu ligula. Nulla fermentum ex ut facilisis egestas. Donec interdum sollicitudin rhoncus. Etiam quam nisi, sodales ut nisi ac, fringilla pellentesque nibh. Donec interdum sollicitudin rhoncus. Etiam quam nisi, sodales ut nisi ac, fringilla pellentesque nibh.
+                  </div>
+                  <a href="#" class="link-more fs-small">
+                    Learn More
+                    <img src="./wp-content/themes/eli/assets/img_arrow_right.svg" alt="">
+                  </a>
+                </div>
+                <div class="content right col-12 col-md-7 ml-auto">
+                  <img src="./wp-content/themes/eli/assets/img_farmer_focused.jpg" alt="">
+                </div>
+              </div>
+            </div>
             
           </div>
         </div>
