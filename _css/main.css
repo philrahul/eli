@@ -65,11 +65,14 @@ label, textarea{
 }
   
 /* --- Global Headings --- */
-h1{
+h1,
+.h1{
   font-size: 68px;
   margin-bottom: 22px;
 }
-h2{
+
+h2,
+.h2{
   font-size: 48px;
   margin-bottom: 17px;
 }
@@ -281,7 +284,8 @@ a:hover{
 }
   
 
-/* SECTION_TWO-COLUMNS-STATS */
+/* SECTION_IMAGE-ASIDE-TEXT-SLIDER */
+/* Remove the -bg */
 .wh-section_image-aside-text-slider-bg{
   color: #000;
 } 
