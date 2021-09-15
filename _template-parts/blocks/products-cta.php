@@ -33,8 +33,33 @@ $link = get_field('link');
 $image = get_field('image');
 ?>
 <!-- banner section -->
-<section class="products-cta <?php echo esc_attr(implode(' ',$className)); ?>" id="<?php echo esc_attr($id); ?>">
-        
+<section class="products-cta <?php echo esc_attr(implode(' ',$className)); ?> wh-section_products position-relative" id="<?php echo esc_attr($id); ?>">
+    <div class="content left">
+      <img class="" src="/wp-content/themes/eli/assets/banner_fibre_product.jpg" alt="">
+    </div>
+    <div class="background-color">
+      <div class="container">
+        <div class="row">
+          <div class="ml-auto col-12 col-lg-7">
+            <div class="content right">
+              <h2>Products</h2>
+              <div class="fs-small">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tellus ipsum, interdum a fermentum id, aliquet eu ligula. Nulla fermentum ex ut facilisis egestas. Donec interdum sollicitudin rhoncus. Etiam quam nisi, sodales ut nisi ac, fringilla pellentesque nibh.
+              </div>
+              <div class="d-flex flex-wrap link-group">
+                <h3>Herd</h3>
+                <h3>Long Fiber</h3>
+                <h3>Short Fiber</h3>
+                <h3>Dust</h3>
+              </div>
+              <a href="#" class="link-more link-more-white fs-small">
+                View All Products<img src="./wp-content/themes/eli/assets/img_arrow_white.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </section>
 <script>
    

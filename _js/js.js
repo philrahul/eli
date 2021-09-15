@@ -28,7 +28,6 @@ window.onload = () => {
             
 
         window.addEventListener( 'wheel', function(e) {
-            e.stopImmediatePropagation();
             Array.from( hs_items ).forEach( ( item, index ) => {
                 hs_items_width[ index ] = calculateWidthFromTo( 0, index );
             } );
@@ -36,7 +35,7 @@ window.onload = () => {
             const leftScrollable = calculateWidthFromTo(0, hs_items.length - 1);
 
             function scroll () {
-                let leftScroll = hs_scroll.scrollLeft - e.wheelDeltaY * .1;
+                let leftScroll = hs_scroll.scrollLeft - e.wheelDeltaY * .05;
                 if ( leftScroll <= 0 ){
                     document.querySelector('body').style = "";
                     currentState = 'ready';
@@ -53,7 +52,7 @@ window.onload = () => {
         
                 if ( e.deltaY >= 0 ){
                     for ( let i = 0 ; i < hs_items.length ; i++ ) {
-                        hs_scroll.scrollTo( {left: ++leftScroll} );
+                        hs_scroll.scrollTo( {left: leftScroll + 1} );
                         let index = i;
                         let to = index === hs_items.length - 1 ? hs_items.length - 1 : index + 1;
                         const left = hs_items_width[to];
@@ -70,6 +69,7 @@ window.onload = () => {
                 }
                 else if ( e.deltaY <= -1 ){
                     for ( let i = 0 ; i < hs_items.length ; i++ ){
+                        hs_scroll.scrollTo( {left: leftScroll - .3} );
                         let index = i;
                         let offset = hs_items_width[index];
                         let to = index === 0 ? 0 : index - 1;
@@ -101,6 +101,7 @@ window.onload = () => {
                     scroll();
                 }
             }else{
+                e.stopImmediatePropagation();
                 document.querySelector('body').style = '';
                 currentState = 'done';
             }
