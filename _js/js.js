@@ -28,10 +28,15 @@ window.onload = () => {
             
 
         window.addEventListener( 'wheel', function(e) {
+            e.stopImmediatePropagation();
+            Array.from( hs_items ).forEach( ( item, index ) => {
+                hs_items_width[ index ] = calculateWidthFromTo( 0, index );
+            } );
+
             const leftScrollable = calculateWidthFromTo(0, hs_items.length - 1);
 
             function scroll () {
-                let leftScroll = hs_scroll.scrollLeft - e.wheelDeltaY * .03;
+                let leftScroll = hs_scroll.scrollLeft - e.wheelDeltaY * .1;
                 if ( leftScroll <= 0 ){
                     document.querySelector('body').style = "";
                     currentState = 'ready';
@@ -42,10 +47,9 @@ window.onload = () => {
                     document.querySelector('body').style = "";
                     currentState = 'done';
                     activateDot( hs_dots.length - 1 );
-                    hs_scroll.scrollTo( { left: calculateWidthFromTo(0, lastDot) } );
                     return;
                 }
-                hs_scroll.scrollTo( {left: leftScroll} );
+                hs_scroll.scrollTo( {left: leftScroll - 1} );
         
                 if ( e.deltaY >= 0 ){
                     for ( let i = 0 ; i < hs_items.length ; i++ ) {
@@ -53,6 +57,7 @@ window.onload = () => {
                         let index = i;
                         let to = index === hs_items.length - 1 ? hs_items.length - 1 : index + 1;
                         const left = hs_items_width[to];
+                        //console.log( {left, 'della': e.deltaY} );
                         if ( leftScroll <= left  ){
                             hs_scroll.scrollTo( { 
                                 left,
@@ -65,11 +70,11 @@ window.onload = () => {
                 }
                 else if ( e.deltaY <= -1 ){
                     for ( let i = 0 ; i < hs_items.length ; i++ ){
-                        hs_scroll.scrollTo( {left: --leftScroll} );
                         let index = i;
                         let offset = hs_items_width[index];
                         let to = index === 0 ? 0 : index - 1;
                         const left = hs_items_width[to];
+                        //console.log( {left, 'della': e.deltaY} );
                         if ( leftScroll < offset  ){
                             hs_scroll.scrollTo( { 
                                 left,
@@ -83,7 +88,9 @@ window.onload = () => {
                     
             }
                 
-            if ( hs_section.getBoundingClientRect().top >= window.innerHeight / 4  && hs_section.getBoundingClientRect().top <= window.innerHeight / 3  ){
+            if ( hs_section.getBoundingClientRect().top >= window.innerHeight / 8  && hs_section.getBoundingClientRect().top <= window.innerHeight / 4  ){
+                // (window.pageYOffset - target + hs_section.getBoundingClientRect().height > 250 && window.pageYOffset - target + hs_section.getBoundingClientRect().height < 350) 
+                window.scroll({top: window.pageYOffset });
                 document.querySelector('body').style = "overflow: hidden";
                 if ( currentState === 'ready' || currentState === 'run' ){
                     currentState = 'run';
@@ -95,10 +102,6 @@ window.onload = () => {
                 }
             }else{
                 document.querySelector('body').style = '';
-                if ( hs_scroll.scrollLeft >= 10 ){
-                    activateDot( lastDot );
-                    hs_scroll.scrollTo( { left: calculateWidthFromTo(0, lastDot) } );
-                }
                 currentState = 'done';
             }
             
