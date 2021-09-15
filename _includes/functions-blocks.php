@@ -150,6 +150,18 @@ function register_acf_block_types() {
             'post_types'        => array('page'),
             ));
 
+            acf_register_block_type(array(
+              'name'              => 'image-aside-text-slider-without-background',
+              'title'             => __('Image aside text slider without background'),
+              'description'       => __('A Block for displaying image aside text slider without background'),
+              'render_template'   => '_template-parts/blocks/image-aside-text-slider-without-background.php',
+              'category'          => 'formatting',
+              'icon'              => $flag ,
+              'keywords'          => array( 'without-background','slider','image','text'),
+              'post_types'        => array('page'),
+              ));
+            
+
       
 
 }
@@ -159,7 +171,7 @@ global $post;
 $add_editor_style = false;
 if (is_admin() && isset($_GET['post']) ) {
   global $common_blocks;
-  $common_blocks = array('acf/cta-banner','acf/image-aside-text-with-background','acf/image-aside-text','acf/two-columns-cta','acf/blog-list-cta','acf/two-columns-cta-repeater','acf/image-aside-text-slider','acf/image-aside-text-slider-with-background','acf/two-columns-stats','acf/three-columns-with-background');
+  $common_blocks = array('acf/cta-banner','acf/image-aside-text-with-background','acf/image-aside-text','acf/two-columns-cta','acf/blog-list-cta','acf/two-columns-cta-repeater','acf/image-aside-text-slider','acf/image-aside-text-slider-with-background','acf/two-columns-stats','acf/three-columns-with-background','acf/image-aside-text-slider-without-background');
   $pagetemplate = get_post_meta($_GET['post'], '_wp_page_template', true);
   if ( !empty( $pagetemplate ) ) {
     if ( $pagetemplate == 'page-custom-blocks.php') {

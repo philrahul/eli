@@ -43,7 +43,8 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="copyright_text">
+                    <div class="
+                    ">
                         <p><?php echo get_field('copyright_text', 'option');?> </p>
                     </div>
                 </div>

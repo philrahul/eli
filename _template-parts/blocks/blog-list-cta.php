@@ -39,7 +39,6 @@ if( $blogs ): ?>
     <div class="container">
       <div class="row">
         <?php foreach( $blogs as $post ): 
-
             // Setup this post for WP functions (variable must be named $post).
             setup_postdata($post); ?>
             <div class="col-md-4">
