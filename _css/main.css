@@ -4,10 +4,10 @@
 /* FONTS */
 
 :root{
-    --font-roboto : 'Roboto', sans-serif;
-    --font-open-sans: 'Open Sans', sans-serif;;
-    --font-ubuntu: 'Ubuntu', sans-serif;
-  }
+  --font-roboto : 'Roboto', sans-serif;
+  --font-open-sans: 'Open Sans', sans-serif;;
+  --font-ubuntu: 'Ubuntu', sans-serif;
+}
   
   /* COLORS */
 :root{
@@ -20,6 +20,7 @@
   --color-semantic-blue: #208DCD;
   --color-semantic-purple: #8522A0;
   --color-semantic-red: #D21D5D;
+  --color-semantic-grey: #5A5A5A;
   
   --color-background-green: #0E322A;
   
@@ -44,7 +45,7 @@ body{
   color: #fff;
 }
   
-h1,h2,h3,h4,h5,h6{
+h1,h2,h3,h4,h5,h6,div{
   font-family: var(--font-ubuntu);
   font-weight: 300;
 }
@@ -69,19 +70,21 @@ h1,
 .h1{
   font-size: 68px;
   margin-bottom: 22px;
+  line-height: 24px;
 }
 
 h2,
 .h2{
   font-size: 48px;
   margin-bottom: 17px;
+  line-height: 55px;
 }
   
 /* --- Global Anchors --- */
 a:link,
 a:visited,
 a:hover{
-  color: #5A5A5A;
+  color: var(--color-semantic-grey);
   text-decoration: none;
 }
   
@@ -398,9 +401,44 @@ a.link-more-white{
   
 }
   
+/* SECTION_BLOG_LIST */
+.wh-section_blog-list{
+  padding: 100px 0;
+}
+.wh-section_blog-list .cards-wrapper{
+  max-width: 1293px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.wh-section_blog-list .cards-wrapper .card{
+  border: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,.16);
+  margin-bottom: 15px;
+}
+.wh-section_blog-list .cards-wrapper .card .card-image-wrapper{
   
-  
-  
+}
+.wh-section_blog-list .cards-wrapper .card .card-image-wrapper img{
+  max-height: 201px;
+  width: 100%;
+}
+.wh-section_blog-list .cards-wrapper .card .card-content-wrap{
+  color: #000;
+  padding: 16px 21px 43px;
+}
+.wh-section_blog-list .cards-wrapper .card .card-content-wrap .card-date{
+  color: var(--color-semantic-grey);
+  margin-bottom: 13px;
+}
+.wh-section_blog-list .cards-wrapper .card .card-content-wrap .card-detail{
+  margin-bottom: 27px;
+  font-size: 28px;
+}
+.wh-section_blog-list .cards-wrapper .card .card-content-wrap .link-more{
+  color: #000;
+}
   
   
   
@@ -436,6 +474,10 @@ a.link-more-white{
 
   .wh-section_products .content.left{
     max-width: 43.125vw;
+  }
+
+  .wh-section_blog-list .cards-wrapper .card .card-content-wrap .card-detail{
+    font-size: 24px;
   }
 }
 
@@ -483,7 +525,7 @@ a.link-more-white{
   }
 }
   
-@media (max-width: 768.98px){
+@media (max-width: 767.98px){
   .backgound-image.border-bottom-round{
     --radius: 30;
   }

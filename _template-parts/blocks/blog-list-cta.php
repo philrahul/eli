@@ -33,8 +33,8 @@ $link = get_field('link');
 $blogs = get_field('blogs');
 ?>
 <!-- banner section -->
-<section class="blog-list <?php echo esc_attr(implode(' ',$className)); ?>" id="<?php echo esc_attr($id); ?>">
-<?php 
+<section class="blog-list <?php echo esc_attr(implode(' ',$className)); ?> wh-section_blog-list" id="<?php echo esc_attr($id); ?>">
+<!-- <?php 
 if( $blogs ): ?>
     <div class="container">
       <div class="row">
@@ -59,8 +59,58 @@ if( $blogs ): ?>
         wp_reset_postdata(); ?>
       </div>
     </div>
-<?php endif; ?>
-?> 
+<?php endif; ?> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12 cards-wrapper">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="card">
+                <div class="card-image-wrapper">
+                  <img src="./wp-content/themes/eli/assets/banner_fibre_product.jpg" alt="">
+                </div>
+                <div class="card-content-wrap">
+                  <p class="card-date">May 13, 2020</p>
+                  <p class="card-detail">News or blog headline here that could go two lines.</p>
+                  <a href="#" class="link-more fs-small">
+                    Read More<img src="./wp-content/themes/eli/assets/img_arrow_right.svg" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="card">
+                <div class="card-image-wrapper">
+                  <img src="./wp-content/themes/eli/assets/banner_fibre_product.jpg" alt="">
+                </div>
+                <div class="card-content-wrap">
+                  <p class="card-date">May 13, 2020</p>
+                  <p class="card-detail">News or blog headline here that could go two lines.</p>
+                  <a href="#" class="link-more fs-small">
+                    Read More<img src="./wp-content/themes/eli/assets/img_arrow_right.svg" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="card">
+                <div class="card-image-wrapper">
+                  <img src="./wp-content/themes/eli/assets/banner_fibre_product.jpg" alt="">
+                </div>
+                <div class="card-content-wrap">
+                  <p class="card-date">May 13, 2020</p>
+                  <p class="card-detail">News or blog headline here that could go two lines.</p>
+                  <a href="#" class="link-more fs-small">
+                    Read More<img src="./wp-content/themes/eli/assets/img_arrow_right.svg" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
 </section>
 <script>
    
