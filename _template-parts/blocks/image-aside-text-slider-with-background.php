@@ -42,7 +42,7 @@ $title = get_field('title');
 ?>
 
 <!-- banner section -->
-<section class="image-aside-text-slider-bg hs-section wh-section wh-section_image-aside-text-slider-bg <?php echo esc_attr(implode(' ',$className)); ?>" id="<?php echo esc_attr($id); ?>">
+<section class="image-aside-text-slider hs-section wh-section wh-section_image-aside-text-slider-bg <?php echo esc_attr(implode(' ',$className)); ?>" id="<?php echo esc_attr($id); ?>">
   <div class="container">
     <div class="row">
       <div class="col-12">

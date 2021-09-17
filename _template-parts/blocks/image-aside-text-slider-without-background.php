@@ -42,7 +42,7 @@ $title = get_field('title');
 ?>
 
 <!-- banner section -->
-<section class="image-aside-text-slider-bg hs-section wh-section wh-section_image-aside-text-slider-bg <?php echo esc_attr(implode(' ',$className)); ?>" id="<?php echo esc_attr($id); ?>">
+<section class="image-aside-text-slider hs-section wh-section wh-section_image-aside-text-slider <?php echo esc_attr(implode(' ',$className)); ?>" id="<?php echo esc_attr($id); ?>">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -58,7 +58,7 @@ $title = get_field('title');
             ?>
             <div class="hs-item slider-item w-100">
               <div class="row flex-column flex-md-row">
-                <div class="content left col-12 col-md-5 d-flex flex-column justify-content-center ">
+                <div class="content left col-12 col-lg-5 d-flex flex-column justify-content-center ">
                   <?php if($title):echo'<h2>'.$title.'</h2>';endif;
                   if($description):echo'<div class="fs-small">'.$description.'</div>';endif;
                   if($link):?>
@@ -69,7 +69,7 @@ $title = get_field('title');
                   <?php endif;?>
                 </div>
                 <?php if($image):?>
-                <div class="content right col-12 col-md-7 ml-auto">
+                <div class="content right col-12 col-lg-7 ml-auto">
                   <img src="<?php echo $image['url'];?>" alt="">
                 </div>
                 <?php endif;?>
